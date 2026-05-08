@@ -462,7 +462,6 @@ void Cacher::CacheWorker() {
 }
 
 void Cacher::CloseWorker() {
-  prewarmed_.store(false, std::memory_order_relaxed);
   retrieved_frame = nullptr;
   queue_.lock();
   queue_.clear();
